@@ -48,9 +48,9 @@ button {
 
   .logo {
     display: flex;
-    width: 20vw;
+    width: 88vw;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
   }
 
     .logo__img {
@@ -59,31 +59,33 @@ button {
     }
 
     .logo__title {
-      font-size: 3vmax;
+      font-size: calc(20px + 3vmin);
       font-weight: lighter;
       color: var(--grey-color);
     }
 
   .icons {
-    position: absolute;
+    /* position: absolute; */
     display: flex;
-    justify-content: center;
+    /* justify-content: center;
     align-items: center;
 
     left: 82vw;
     height: 15vh;
-    max-width: 20vw;
+    max-width: 20vw; */
 
     /* background-color: blue; */
 
-    margin-right: 3vmax;
+    margin-right: 3vmin;
+    width: calc(30px + 12vmin);
   }
 
     .icon {
-      width: 6vmin;
-      /* margin-left: 1vw; */
+      /* width: 6vmin; */
+      margin-left: 1vw;
       margin-right: 1vw;
       color: var(--grey-color);
+      width: 100%;
     }
 
 /*------------------ MAIN ------------------*/
