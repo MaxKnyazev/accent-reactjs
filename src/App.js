@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-// import githubSvg from './svg/githubSvg';
+import GithubIcon from './svg/GithubIcon';
+import VkIcon from './svg/VkIcon';
 
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
     <div className="progress progress--incorrect"></div>
 
     <div className="icons">
-      
+      <GithubIcon />
+      <VkIcon />
     </div>
   </header>
 
