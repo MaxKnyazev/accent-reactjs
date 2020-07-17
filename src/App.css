@@ -192,6 +192,11 @@ button {
           color: var(--grey-color);
         }
 
+        .main__btn--start {
+          font-size: calc(10px + 3vmin);
+          width: 35vmin;
+        }
+
       .main__btn--correct {
         background-color: rgb(2, 56, 0);
         color: var(--correct-color);
