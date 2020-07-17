@@ -3,43 +3,114 @@ import './App.css';
 import GithubIcon from '../svg/GithubIcon';
 import VkIcon from '../svg/VkIcon';
 import words from '../data/data';
-import {randomSort} from '../data/utils';
+import { randomSort } from '../data/utils';
 
 class App extends Component {
   state = {
-    isGameOn: false,
-    correctCount: 2,
-    incorrectCount: 3,
+    correctCount: 0,
+    incorrectCount: 0,
     allCount: words.length,
     firstWord: '',
     secondWord: '',
-  }
+  };
+
+  isGameOn = false;
+  isFinished = false;
+  index = 0;
 
   buttonStartHandler = () => {
+    this.setState({
+      correctCount: 0,
+      incorrectCount: 0,
+      allCount: words.length,
+      firstWord: '',
+      secondWord: '',
+    });
+    
+    this.index = 0;
+
     randomSort(words);
+    words.map(elem => elem.madeError = false)
     console.log('--------Массив Слов---------');
     console.log(words);
 
     let randomNumber = Math.random();
+    this.isGameOn = true;
     this.setState({
-      isGameOn: true,
-      firstWord: randomNumber > 0.5 ? words[0].correct : words[0].incorrect,
-      secondWord: randomNumber > 0.5 ? words[0].incorrect : words[0].correct, 
-    })
-  }
+      firstWord:
+        randomNumber > 0.5
+          ? words[this.index].correct
+          : words[this.index].incorrect,
+      secondWord:
+        randomNumber > 0.5
+          ? words[this.index].incorrect
+          : words[this.index].correct,
+    });
+  };
+
+  wordButtonHandler = (word, idx) => {
+    if (words[idx].correct === word) {
+      console.log('Правильно!');
+      this.setState((prevState) => ({
+        correctCount: prevState.correctCount + 1,
+      }));
+    } else {
+      words[idx].madeError = true;
+      console.log('Неправильно!');
+      this.setState((prevState) => ({
+        incorrectCount: prevState.incorrectCount + 1,
+      }));
+    }
+
+    this.setState((prevState) => ({
+      allCount: prevState.allCount - 1,
+    }));
+    this.index += 1;
+    console.log(this.state.allCount);
+
+    if (!this.checkEnd()) {
+      let randomNumber = Math.random();
+      this.setState({
+        firstWord:
+          randomNumber > 0.5
+            ? words[this.index].correct
+            : words[this.index].incorrect,
+        secondWord:
+          randomNumber > 0.5
+            ? words[this.index].incorrect
+            : words[this.index].correct,
+      });
+    } else {
+      console.log('Конец игры');
+      console.log(words);
+      this.isGameOn = false;
+      this.isFinished = true;
+    }
+  };
+
+  checkEnd = () => this.state.allCount === 1;
 
   render() {
-    
     return (
       <>
         <header className='header'>
-          <div style={{width: `${this.state.correctCount * (100 / words.length)}vw`}} className='progress progress--correct'></div>
+          <div
+            style={{
+              width: `${this.state.correctCount * (100 / words.length)}vw`,
+            }}
+            className='progress progress--correct'
+          ></div>
 
           <div className='logo'>
             <h1 className='logo__title'>Accent</h1>
           </div>
 
-          <div style={{width: `${this.state.incorrectCount * (100 / words.length)}vw`}} className='progress progress--incorrect'></div>
+          <div
+            style={{
+              width: `${this.state.incorrectCount * (100 / words.length)}vw`,
+            }}
+            className='progress progress--incorrect'
+          ></div>
 
           <div className='icons'>
             <GithubIcon />
@@ -47,28 +118,78 @@ class App extends Component {
           </div>
         </header>
 
-        {this.state.isGameOn ?       
-        <main className='main'>
-          <section className='main__content'>
-            <div className='main__buttons'>
-              <span className='main__btn'>{this.state.firstWord}</span>
-              <span className='main__btn'>{this.state.secondWord}</span>
-            </div>
+        {this.isGameOn ? (
+          <main className='main'>
+            <section className='main__content'>
+              <div className='main__buttons'>
+                <span
+                  onClick={() => {
+                    this.wordButtonHandler(this.state.firstWord, this.index);
+                  }}
+                  className='main__btn'
+                >
+                  {this.state.firstWord}
+                </span>
+                <span
+                  onClick={() => {
+                    this.wordButtonHandler(this.state.secondWord, this.index);
+                  }}
+                  className='main__btn'
+                >
+                  {this.state.secondWord}
+                </span>
+              </div>
 
-            <div className='main__levels'>
-              <span className='main__info main__info--correct'>{this.state.correctCount}</span>
-              <span className='main__info main__info--all'>{this.state.allCount}</span>
-              <span className='main__info main__info--incorrect'>{this.state.incorrectCount}</span>
-            </div>
-          </section>
-        </main>
-        :
-        <main className='main'>
-          <section className='main__content'>
-            <span onClick={this.buttonStartHandler} className='main__btn main__btn--start'>Начать</span>
-          </section>
-        </main>
-        }
+              <div className='main__levels'>
+                <span className='main__info main__info--correct'>
+                  {this.state.correctCount}
+                </span>
+                <span className='main__info main__info--all'>
+                  {this.state.allCount}
+                </span>
+                <span className='main__info main__info--incorrect'>
+                  {this.state.incorrectCount}
+                </span>
+              </div>
+            </section>
+          </main>
+        ) : this.isFinished ? (
+          <main className='main'>
+            <section className='main__content'>
+              <div>{words.filter(elem => elem.madeError === true).map(elem => elem.incorrect)}</div>
+
+              <span
+                onClick={this.buttonStartHandler}
+                className='main__btn main__btn--start'
+              >
+                Начать заново
+              </span>
+
+              <div className='main__levels'>
+                <span className='main__info main__info--correct'>
+                  {this.state.correctCount}
+                </span>
+                <span className='main__info main__info--all'>
+                  {this.state.allCount}
+                </span>
+                <span className='main__info main__info--incorrect'>
+                  {this.state.incorrectCount}
+                </span>
+              </div>
+            </section>
+          </main>
+        ) : (
+          <main className='main'>
+            <section className='main__content'>
+              <span
+                onClick={this.buttonStartHandler}
+                className='main__btn main__btn--start'
+              >
+                Начать
+              </span>
+            </section>
+          </main>
+        )}
 
         <footer className='footer'>
           <span className='footer__copyright'>
@@ -76,7 +197,7 @@ class App extends Component {
           </span>
         </footer>
       </>
-    )
+    );
   }
 }
 
