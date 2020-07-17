@@ -34,7 +34,6 @@ class App extends Component {
       <>
         <header className='header'>
           <div style={{width: `${this.state.correctCount * (100 / words.length)}vw`}} className='progress progress--correct'></div>
-
           <div className='logo'>
             <h1 className='logo__title'>Accent</h1>
           </div>
