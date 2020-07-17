@@ -38,12 +38,12 @@ button {
 
     .progress--correct {
       background-color: var(--correct-color);
-      width: 60vw;
+      width: 0;
     }
 
     .progress--incorrect {
       background-color: var(--incorrect-color);
-      width: 40vw;
+      width: 0;
     }
 
   .logo {
