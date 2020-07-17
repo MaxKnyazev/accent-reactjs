@@ -83,8 +83,14 @@ button {
       width: 6vmin;
       /* height: 6vmin; */
       /* margin-left: 1vw; */
+      cursor: pointer;
       margin-right: 1vw;
       color: var(--grey-color);
+      transition: 200ms color linear;
+    }
+
+    .icon:hover {
+      color: rgb(197, 197, 197);
     }
 
 /*------------------ MAIN ------------------*/
@@ -215,6 +221,8 @@ button {
   width: 100vw;
   background-color: rgb(15, 15, 15);
   color: white;
+
+  border-top: 5px solid rgb(71, 71, 71);
 
   display: flex;
   justify-content: center;
