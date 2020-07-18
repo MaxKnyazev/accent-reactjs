@@ -132,6 +132,20 @@ button {
       .main__wrongsList {
       }
 
+      .main__successMessage {
+        font-size: calc(10px + 4vmin);
+        color: rgb(32, 32, 32);
+        font-weight: normal;
+      }
+
+      .main__unsuccessMessage {
+        font-size: calc(10px + 3vmin);
+        margin-bottom: 15px;
+        color: rgb(139, 139, 139);
+        font-weight: normal;
+        text-align: center;
+      }
+
         .main__wrongsItem {
           list-style-type: none;
           display: flex;

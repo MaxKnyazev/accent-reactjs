@@ -5,6 +5,29 @@ import VkIcon from '../svg/VkIcon';
 import words from '../data/data';
 import { randomSort } from '../data/utils';
 
+function WrongsResult({ words }) {
+  let wrongWords = words
+    .filter((elem) => elem.madeError === true)
+    .map((elem) => (
+      <li key={elem.id} className='main__wrongsItem'>
+        <span className='main__itemCorrect'>{elem.correct}</span>
+        <span className='main__itemSeparator'>-</span>
+        <span className='main__itemIncorrect'>{elem.incorrect}</span>
+      </li>
+    ));
+
+  return wrongWords.length ? (
+    <div className='main__showWrongs'>
+      <ul className='main__wrongsList'>
+        <li className='main__wrongsItem'><h2 className='main__unsuccessMessage'>Ваши ошибки:</h2></li>
+        {wrongWords}
+      </ul>
+    </div>
+  ) : (
+    <h2 className='main__successMessage'>Ошибок нет</h2>
+  );
+}
+
 class App extends Component {
   state = {
     correctCount: 0,
@@ -91,16 +114,6 @@ class App extends Component {
   checkEnd = () => this.state.allCount === 1;
 
   render() {
-    let wrongsResult = words
-      .filter((elem) => elem.madeError === true)
-      .map((elem) => (
-        <li key={elem.id} className='main__wrongsItem'>
-          <span className='main__itemCorrect'>{elem.correct}</span>
-          <span className='main__itemSeparator'>-</span>
-          <span className='main__itemIncorrect'>{elem.incorrect}</span>
-        </li>
-      ));
-
     return (
       <>
         <header className='header'>
@@ -166,12 +179,7 @@ class App extends Component {
         ) : this.isFinished ? (
           <main className='main'>
             <section className='main__content'>
-              <div className='main__showWrongs'>
-                <ul className='main__wrongsList'>
-                  {wrongsResult}
-                </ul>
-              </div>
-
+              <WrongsResult words={words} />
               <span
                 onClick={this.buttonStartHandler}
                 className='main__btn main__btn--start'
