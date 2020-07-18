@@ -1,0 +1,14 @@
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  --correct-color: rgb(0, 221, 0);
+  --incorrect-color: rgb(255, 0, 0);
+  --grey-color: rgb(236, 236, 236);
+}
+
+button {
+  border: none;
+}

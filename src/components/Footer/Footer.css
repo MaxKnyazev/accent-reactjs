@@ -1,0 +1,17 @@
+.footer {
+  height: 10vh;
+  width: 100vw;
+  background-color: rgb(15, 15, 15);
+  color: white;
+
+  border-top: 5px solid rgb(71, 71, 71);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+  .footer__copyright {
+    text-align: center;
+    color: rgb(71, 71, 71)
+  }

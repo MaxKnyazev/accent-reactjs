@@ -1,8 +1,9 @@
 import React from 'react';
-import GithubIcon from '../svg/GithubIcon';
-import VkIcon from '../svg/VkIcon';
-import ProgressBar from './ProogressBar';
-import words from '../data/data';
+import GithubIcon from '../../svg/GithubIcon';
+import VkIcon from '../../svg/VkIcon';
+import ProgressBar from '../ProgressBar/ProogressBar';
+import words from '../../data/data';
+import './Header.css';
 
 function Header ({correctCount, incorrectCount}) {
   return (

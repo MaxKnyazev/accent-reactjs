@@ -1,0 +1,56 @@
+.header {
+  height: 15vh;
+  width: 100vw;
+
+  background-color: rgb(24, 24, 24);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+
+  position: relative;
+}
+
+  .logo {
+    display: flex;
+    width: 20vw;
+    align-items: center;
+    justify-content: center;
+  }
+
+    .logo__img {
+      width: 5vh;
+      height: 5vh;
+    }
+
+    .logo__title {
+      font-size: 3vmax;
+      font-weight: lighter;
+      color: var(--grey-color);
+    }
+
+  .icons {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    left: 82vw;
+    height: 15vh;
+    max-width: 20vw;
+    margin-right: 3vmax;
+  }
+
+    .icon {
+      width: 6vmin;
+      cursor: pointer;
+      margin-right: 1vw;
+      color: var(--grey-color);
+      transition: 200ms color linear;
+    }
+
+    .icon:hover {
+      color: rgb(197, 197, 197);
+    }

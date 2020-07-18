@@ -1,4 +1,5 @@
 import React from 'react';
+import './WrongsResult.css';
 
 function WrongsResult({ words }) {
   let wrongWords = words

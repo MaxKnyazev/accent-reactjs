@@ -1,0 +1,50 @@
+.main__btn {
+  width: 40vmin;
+  height: 15vmin;
+  min-width: 200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgb(32, 32, 32);
+  color: var(--grey-color);
+  font-size: calc(10px + 2vmin);
+  font-weight: lighter;
+  border-bottom: 0 solid black;
+
+  cursor: pointer;
+  transition: all 200ms linear;
+}
+  .main__btn:hover {
+    border-bottom: 10px solid rgb(107, 107, 107);
+    background-color: rgb(44, 44, 44);
+    color: var(--grey-color);
+  }
+
+  .main__btn--start {
+    font-size: calc(10px + 3vmin);
+    width: 35vmin;
+  }
+
+.main__btn--correct {
+  background-color: rgb(2, 56, 0);
+  color: var(--correct-color);
+  border-bottom: 10px solid var(--correct-color);
+}
+  .main__btn--correct:hover {
+    background-color: rgb(2, 56, 0);
+    color: var(--correct-color);
+    border-bottom: 10px solid var(--correct-color);
+  }
+
+.main__btn--incorrect {
+  background-color: rgb(56, 0, 0);
+  color: var(--incorrect-color);
+  border-bottom: 10px solid var(--incorrect-color);
+}
+  .main__btn--incorrect:hover {
+    background-color: rgb(56, 0, 0);
+    color: var(--incorrect-color);
+    border-bottom: 10px solid var(--incorrect-color);
+  }

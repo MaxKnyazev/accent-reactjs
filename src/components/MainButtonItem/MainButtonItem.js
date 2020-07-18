@@ -1,4 +1,5 @@
 import React from 'react';
+import './MainButtonItem.css';
 
 function MainButtonItem ({buttonHandler, word, index, classes}) {
   return (

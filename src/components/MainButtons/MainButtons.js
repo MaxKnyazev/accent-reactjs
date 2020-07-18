@@ -1,5 +1,6 @@
 import React from 'react';
-import MainButtonItem from './MainButtonItem';
+import MainButtonItem from '../MainButtonItem/MainButtonItem';
+import './MainButton.css';
 
 function MainButtons ({wordButtonHandler, firstWord, secondWord, index=0}) {
   return (

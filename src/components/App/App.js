@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import words from '../data/data';
-import { randomSort } from '../data/utils';
-import Footer from './Footer';
-import Header from './Header';
-import Main from './Main';
+import words from '../../data/data';
+import { randomSort } from '../../data/utils';
+import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
+import Main from '../Main/Main';
 
 class App extends Component {
   state = {

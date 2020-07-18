@@ -1,9 +1,10 @@
 import React from 'react';
-import WrongsResult from './WrongsResult';
-import words from '../data/data';
-import MainInfo from './MainInfo';
-import MainButtons from './MainButtons';
-import MainButtonItem from './MainButtonItem';
+import WrongsResult from '../WrongResult/WrongsResult';
+import words from '../../data/data';
+import MainInfo from '../MainInfo/MainInfo';
+import MainButtons from '../MainButtons/MainButtons';
+import MainButtonItem from '../MainButtonItem/MainButtonItem';
+import './Main.css';
 
 function Main ({isGameOn, buttonStartHandler, wordButtonHandler, firstWord, secondWord, index, isFinished, correctCount, allCount, incorrectCount}) {
   return (

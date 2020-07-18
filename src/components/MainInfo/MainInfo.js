@@ -1,4 +1,5 @@
 import React from 'react';
+import './MainInfo.css';
 
 function MainInfo({ correctCount, allCount, incorrectCount }) {
   return (

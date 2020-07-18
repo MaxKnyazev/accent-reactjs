@@ -1,4 +1,5 @@
 import React from 'react';
+import './ProgressBar.css';
 
 function ProgressBar ({count, words, classes}) {
   return (
