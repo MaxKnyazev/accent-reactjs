@@ -119,6 +119,46 @@ button {
     justify-content: space-around;
   }
 
+    .main__showWrongs {
+      width: 60vw;
+      height: 35vh;
+      background-color: rgb(223, 223, 223);
+      overflow-x: hidden;
+      overflow-y: scroll;
+      padding: 10px 20px;
+      font-size: calc(10px + 3vmin);
+    }
+
+      .main__wrongsList {
+      }
+
+        .main__wrongsItem {
+          list-style-type: none;
+          display: flex;
+          justify-content: center;
+        }
+
+          .main__itemCorrect {
+            color: var(--correct-color);
+          }
+
+          .main__itemIncorrect {
+            color: var(--incorrect-color);
+          }
+
+          .main__itemSeparator {
+            color: rgb(139, 139, 139);
+            margin: 0 20px;
+          }
+
+    ::-webkit-scrollbar { width: 10px; height: 3px;}
+    ::-webkit-scrollbar-button {  background-color: rgb(107, 107, 107); height: 0;}
+    ::-webkit-scrollbar-track {  background-color: #999;}
+    ::-webkit-scrollbar-track-piece { background-color: rgb(223, 223, 223);}
+    ::-webkit-scrollbar-thumb { height: 50px; background-color: rgb(88, 88, 88);}
+    ::-webkit-scrollbar-corner { background-color: #999;}
+    ::-webkit-resizer { background-color: #666;}
+
     .main__levels {
       /* height: 10vh; */
       width: 100%;

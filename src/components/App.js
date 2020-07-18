@@ -26,11 +26,11 @@ class App extends Component {
       firstWord: '',
       secondWord: '',
     });
-    
+
     this.index = 0;
 
     randomSort(words);
-    words.map(elem => elem.madeError = false)
+    words.map((elem) => (elem.madeError = false));
     console.log('--------Массив Слов---------');
     console.log(words);
 
@@ -91,6 +91,16 @@ class App extends Component {
   checkEnd = () => this.state.allCount === 1;
 
   render() {
+    let wrongsResult = words
+      .filter((elem) => elem.madeError === true)
+      .map((elem) => (
+        <li key={elem.id} className='main__wrongsItem'>
+          <span className='main__itemCorrect'>{elem.correct}</span>
+          <span className='main__itemSeparator'>-</span>
+          <span className='main__itemIncorrect'>{elem.incorrect}</span>
+        </li>
+      ));
+
     return (
       <>
         <header className='header'>
@@ -156,7 +166,11 @@ class App extends Component {
         ) : this.isFinished ? (
           <main className='main'>
             <section className='main__content'>
-              <div>{words.filter(elem => elem.madeError === true).map(elem => elem.incorrect)}</div>
+              <div className='main__showWrongs'>
+                <ul className='main__wrongsList'>
+                  {wrongsResult}
+                </ul>
+              </div>
 
               <span
                 onClick={this.buttonStartHandler}
