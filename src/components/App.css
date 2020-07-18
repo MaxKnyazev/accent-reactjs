@@ -134,14 +134,14 @@ button {
 
       .main__successMessage {
         font-size: calc(10px + 4vmin);
-        color: rgb(32, 32, 32);
+        color: var(--correct-color);
         font-weight: normal;
       }
 
       .main__unsuccessMessage {
         font-size: calc(10px + 3vmin);
         margin-bottom: 15px;
-        color: rgb(139, 139, 139);
+        color: var(--incorrect-color);
         font-weight: normal;
         text-align: center;
       }

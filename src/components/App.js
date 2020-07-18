@@ -1,32 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import GithubIcon from '../svg/GithubIcon';
-import VkIcon from '../svg/VkIcon';
 import words from '../data/data';
 import { randomSort } from '../data/utils';
-
-function WrongsResult({ words }) {
-  let wrongWords = words
-    .filter((elem) => elem.madeError === true)
-    .map((elem) => (
-      <li key={elem.id} className='main__wrongsItem'>
-        <span className='main__itemCorrect'>{elem.correct}</span>
-        <span className='main__itemSeparator'>-</span>
-        <span className='main__itemIncorrect'>{elem.incorrect}</span>
-      </li>
-    ));
-
-  return wrongWords.length ? (
-    <div className='main__showWrongs'>
-      <ul className='main__wrongsList'>
-        <li className='main__wrongsItem'><h2 className='main__unsuccessMessage'>Ваши ошибки:</h2></li>
-        {wrongWords}
-      </ul>
-    </div>
-  ) : (
-    <h2 className='main__successMessage'>Ошибок нет</h2>
-  );
-}
+import Footer from './Footer';
+import Header from './Header';
+import Main from './Main';
 
 class App extends Component {
   state = {
@@ -116,108 +94,21 @@ class App extends Component {
   render() {
     return (
       <>
-        <header className='header'>
-          <div
-            style={{
-              width: `${this.state.correctCount * (100 / words.length)}vw`,
-            }}
-            className='progress progress--correct'
-          ></div>
+        <Header 
+          correctCount={this.state.correctCount} 
+          incorrectCount={this.state.incorrectCount} 
+        />
 
-          <div className='logo'>
-            <h1 className='logo__title'>Accent</h1>
-          </div>
+        <Main 
+          isGameOn={this.isGameOn} 
+          wordButtonHandler={this.wordButtonHandler}
+          index={this.index}
+          {...this.state}
+          isFinished={this.isFinished}
+          buttonStartHandler={this.buttonStartHandler}
+        />
 
-          <div
-            style={{
-              width: `${this.state.incorrectCount * (100 / words.length)}vw`,
-            }}
-            className='progress progress--incorrect'
-          ></div>
-
-          <div className='icons'>
-            <GithubIcon />
-            <VkIcon />
-          </div>
-        </header>
-
-        {this.isGameOn ? (
-          <main className='main'>
-            <section className='main__content'>
-              <div className='main__buttons'>
-                <span
-                  onClick={() => {
-                    this.wordButtonHandler(this.state.firstWord, this.index);
-                  }}
-                  className='main__btn'
-                >
-                  {this.state.firstWord}
-                </span>
-                <span
-                  onClick={() => {
-                    this.wordButtonHandler(this.state.secondWord, this.index);
-                  }}
-                  className='main__btn'
-                >
-                  {this.state.secondWord}
-                </span>
-              </div>
-
-              <div className='main__levels'>
-                <span className='main__info main__info--correct'>
-                  {this.state.correctCount}
-                </span>
-                <span className='main__info main__info--all'>
-                  {this.state.allCount}
-                </span>
-                <span className='main__info main__info--incorrect'>
-                  {this.state.incorrectCount}
-                </span>
-              </div>
-            </section>
-          </main>
-        ) : this.isFinished ? (
-          <main className='main'>
-            <section className='main__content'>
-              <WrongsResult words={words} />
-              <span
-                onClick={this.buttonStartHandler}
-                className='main__btn main__btn--start'
-              >
-                Начать заново
-              </span>
-
-              <div className='main__levels'>
-                <span className='main__info main__info--correct'>
-                  {this.state.correctCount}
-                </span>
-                <span className='main__info main__info--all'>
-                  {this.state.allCount}
-                </span>
-                <span className='main__info main__info--incorrect'>
-                  {this.state.incorrectCount}
-                </span>
-              </div>
-            </section>
-          </main>
-        ) : (
-          <main className='main'>
-            <section className='main__content'>
-              <span
-                onClick={this.buttonStartHandler}
-                className='main__btn main__btn--start'
-              >
-                Начать
-              </span>
-            </section>
-          </main>
-        )}
-
-        <footer className='footer'>
-          <span className='footer__copyright'>
-            Max Knyazev <br /> copyright &copy; 2020
-          </span>
-        </footer>
+        <Footer />
       </>
     );
   }
