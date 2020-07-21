@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  background-color: rgb(61, 61, 61);
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+  .button {
+    width: 20vw;
+    height: 10vh;
+    font-size: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(133, 133, 133);
+    color: white;
+
+    transition: background-color 1000ms ease-in,
+                opacity 500ms ease-in;
+
+    cursor: pointer;
+  }
+
+  h2 {
+    transition: background-color 300ms ease-in,
+    opacity 500ms ease-in;
+  }
+
+  .correct {
+    background-color: green;
+  }
+  
+  .incorrect {
+    background-color: red;
+  }
