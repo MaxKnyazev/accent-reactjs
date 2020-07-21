@@ -21,6 +21,10 @@
     font-size: 5vmin;
     font-weight: lighter;
     color: #fff;
+
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;   
   }
 
     .main__info--correct {

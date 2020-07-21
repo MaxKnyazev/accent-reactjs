@@ -2,7 +2,7 @@ import React from 'react';
 
 export default () => (
   <a
-    href='https://github.com/MaxKnyazev'
+    href='https://github.com/MaxKnyazev/accent-reactjs'
     target='_blank'
     rel='noopener noreferrer'
   >

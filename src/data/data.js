@@ -1,9 +1,9 @@
 ﻿export default [
     { madeError: false, id: 0, correct: 'цепОчка', incorrect: 'цЕпочка'}, 
-    // { madeError: false, id: 1, correct: 'щавЕль', incorrect: 'щАвель'}, 
-    // { madeError: false, id: 2, correct: 'баловАть', incorrect: 'бАловать'}, 
-    // { madeError: false, id: 3, correct: 'опломбировАть', incorrect: 'опломбИровать'},
-    // { madeError: false, id: 4, correct: 'Искра', incorrect: 'искрА'}, 
+    { madeError: false, id: 1, correct: 'щавЕль', incorrect: 'щАвель'}, 
+    { madeError: false, id: 2, correct: 'баловАть', incorrect: 'бАловать'}, 
+    { madeError: false, id: 3, correct: 'опломбировАть', incorrect: 'опломбИровать'},
+    { madeError: false, id: 4, correct: 'Искра', incorrect: 'искрА'}, 
     // { madeError: false, id: 5, correct: 'чЕрпать', incorrect: 'черпАть'},
     // { madeError: false, id: 6, correct: 'наделИт', incorrect: 'надЕлит'}, 
     // { madeError: false, id: 7, correct: 'сирОты', incorrect: 'сИроты'},

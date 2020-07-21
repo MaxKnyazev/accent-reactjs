@@ -14,7 +14,9 @@
   border-bottom: 0 solid black;
 
   cursor: pointer;
-  transition: all 200ms linear;
+  transition: all 200ms ease-in,
+              background-color 500ms ease-in,
+              opacity 250ms ease-in;
 }
   .main__btn:hover {
     border-bottom: 10px solid rgb(107, 107, 107);
@@ -47,4 +49,11 @@
     background-color: rgb(56, 0, 0);
     color: var(--incorrect-color);
     border-bottom: 10px solid var(--incorrect-color);
+  }
+
+  .main__btnInside {
+    transition: opacity 250ms ease-in;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;   
   }
