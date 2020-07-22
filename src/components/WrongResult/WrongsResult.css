@@ -1,11 +1,15 @@
 .main__showWrongs {
   width: 60vw;
   height: 35vh;
-  background-color: rgb(223, 223, 223);
+  background-color: rgb(32, 32, 32);
   overflow-x: hidden;
   overflow-y: scroll;
   padding: 10px 20px;
   font-size: calc(10px + 3vmin);
+  font-weight: lighter;
+
+  border-bottom: 20px solid rgb(32, 32, 32);
+  border-top: 20px solid rgb(32, 32, 32);
 }
 
   .main__wrongsList {
@@ -14,15 +18,15 @@
   .main__successMessage {
     font-size: calc(10px + 4vmin);
     color: var(--correct-color);
-    font-weight: normal;
+    font-weight: lighter;
   }
 
   .main__unsuccessMessage {
     font-size: calc(10px + 3vmin);
     margin-bottom: 15px;
     color: var(--incorrect-color);
-    font-weight: normal;
     text-align: center;
+    font-weight: lighter;
   }
 
     .main__wrongsItem {
@@ -47,7 +51,7 @@
 ::-webkit-scrollbar { width: 10px; height: 3px;}
 ::-webkit-scrollbar-button {  background-color: rgb(107, 107, 107); height: 0;}
 ::-webkit-scrollbar-track {  background-color: #999;}
-::-webkit-scrollbar-track-piece { background-color: rgb(223, 223, 223);}
+::-webkit-scrollbar-track-piece { background-color: rgb(32, 32, 32);}
 ::-webkit-scrollbar-thumb { height: 50px; background-color: rgb(88, 88, 88);}
 ::-webkit-scrollbar-corner { background-color: #999;}
 ::-webkit-resizer { background-color: #666;}

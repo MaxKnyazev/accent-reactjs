@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import WrongsResult from '../WrongResult/WrongsResult';
 import words from '../../data/data';
 import MainInfo from '../MainInfo/MainInfo';
@@ -7,6 +7,8 @@ import MainButtonItem from '../MainButtonItem/MainButtonItem';
 import './Main.css';
 
 function Main ({isGameOn, buttonStartHandler, wordButtonHandler, firstWord, secondWord, index, isFinished, correctCount, allCount, incorrectCount}) {
+  let mainInfoRef = useRef();
+
   return (
     isGameOn ? (
       <main className='main'>
@@ -16,9 +18,10 @@ function Main ({isGameOn, buttonStartHandler, wordButtonHandler, firstWord, seco
             firstWord={firstWord} 
             secondWord={secondWord} 
             index={index}
+            mainInfoRef={mainInfoRef}
           />
 
-          <MainInfo correctCount={correctCount} allCount={allCount} incorrectCount={incorrectCount}/>
+          <MainInfo mainInfoRef={mainInfoRef} correctCount={correctCount} allCount={allCount} incorrectCount={incorrectCount}/>
         </section>
       </main>
     ) : isFinished ? (
@@ -26,8 +29,6 @@ function Main ({isGameOn, buttonStartHandler, wordButtonHandler, firstWord, seco
         <section className='main__content'>
           <WrongsResult words={words} />
           <MainButtonItem buttonHandler={buttonStartHandler} word='Начать заново' classes='main__btn main__btn--start'/>
-
-          <MainInfo correctCount={correctCount} allCount={allCount} incorrectCount={incorrectCount}/>
         </section>
       </main>
     ) : (

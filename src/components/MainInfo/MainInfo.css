@@ -41,3 +41,7 @@
       border: 3px solid var(--incorrect-color);
       color: var(--incorrect-color);
     }
+
+    .main__infoInside {
+      transition: opacity 250ms ease-in;
+    }

@@ -1,11 +1,11 @@
 import React from 'react';
 import './MainButtonItem.css';
 
-function MainButtonItem ({buttonHandler, word, index, classes, mainButtonsRef, wordFlag}) {
+function MainButtonItem ({buttonHandler, word, index, classes, mainButtonsRef, mainInfoRef, wordFlag}) {
   return (
     <span
       onClick={() => {
-        buttonHandler(word, index, mainButtonsRef, wordFlag);
+        buttonHandler(word, index, mainButtonsRef, mainInfoRef, wordFlag);
       }}
       className={classes}
     >

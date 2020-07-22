@@ -26,3 +26,9 @@ export const randomSort = (arr) => {
 	}
 	return arr;
 }
+
+export const delay = ms => new Promise ((resolve) => {
+  setTimeout(() => {
+    resolve();
+  }, ms)
+})
