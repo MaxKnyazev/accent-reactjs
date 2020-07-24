@@ -1,5 +1,5 @@
 .main__btn {
-  width: 40vmin;
+  width: 35vmin;
   height: 15vmin;
   min-width: 200px;
 
@@ -12,6 +12,8 @@
   font-size: calc(10px + 2vmin);
   font-weight: lighter;
   border-bottom: 0 solid black;
+
+  /* position: absolute; */
 
   cursor: pointer;
   transition: all 200ms ease-in,
@@ -56,4 +58,38 @@
     -moz-user-select: none;
     -khtml-user-select: none;
     user-select: none;   
+  }
+
+  @media screen and (min-width: 1600px) {
+    .main__btn { 
+      width: 40vmin; 
+    }
+  }
+
+  @media screen and (max-width: 1400px) {
+    .main__btn:first-child {
+      margin-bottom: 2vh;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .main__btn {
+      width: 20rem;
+      height: 9rem;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .main__btn {
+      font-size: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .main__btn {
+      width: 30vw;
+      height: 30vw;
+
+      text-align: center;
+    }
   }

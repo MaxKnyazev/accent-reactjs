@@ -21,3 +21,10 @@
     align-items: center;
     justify-content: space-around;
   }
+
+  @media screen and (max-width: 1000px) {
+    .main__content {
+      width: 100vw;
+      flex-direction: column-reverse;
+    }
+  }

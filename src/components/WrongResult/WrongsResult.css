@@ -55,3 +55,42 @@
 ::-webkit-scrollbar-thumb { height: 50px; background-color: rgb(88, 88, 88);}
 ::-webkit-scrollbar-corner { background-color: #999;}
 ::-webkit-resizer { background-color: #666;}
+
+@media screen and (max-width: 600px) {
+  .main__showWrongs {
+    width: 80vw;
+    font-size: 2rem;
+  }
+
+  .main__unsuccessMessage {
+    font-size: 2rem;
+  }
+
+  .main__successMessage {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .main__showWrongs {
+    font-size: 1.5rem;
+  }
+
+  .main__unsuccessMessage {
+    font-size: 1.5rem;
+  }
+
+  .main__successMessage {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .main__showWrongs {
+    font-size: 1.2rem;
+  }
+
+  .main__unsuccessMessage {
+    font-size: 1.2rem;
+  }
+}

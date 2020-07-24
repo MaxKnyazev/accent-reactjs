@@ -45,3 +45,33 @@
     .main__infoInside {
       transition: opacity 250ms ease-in;
     }
+
+@media screen and (max-width: 1000px) {
+  .main__levels {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main__levels {
+    width: 90%;
+  }
+
+  .main__info {
+    width: 7rem;
+    height: 7rem;
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main__levels {
+    width: 100%;
+  }
+
+  .main__info {
+    width: 20vw;
+    height: 20vw;
+    font-size: 2rem;
+  }
+}

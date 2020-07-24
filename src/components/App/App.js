@@ -33,8 +33,6 @@ class App extends Component {
 
     randomSort(words);
     words.map((elem) => (elem.madeError = false));
-    console.log('--------Массив Слов---------');
-    console.log(words);
 
     let randomNumber = Math.random();
     this.isGameOn = true;
@@ -56,20 +54,17 @@ class App extends Component {
     if (words[idx].correct === word) {
       mainButtonsRef.current.children[firstElemId].classList.toggle('main__btn--correct');
       mainButtonsRef.current.children[secondElemId].classList.toggle('main__btn--incorrect');
-    } else {
-      mainButtonsRef.current.children[firstElemId].classList.toggle('main__btn--incorrect');
-      mainButtonsRef.current.children[secondElemId].classList.toggle('main__btn--correct');
-    }
-    
-    await delay(1000);
-
-    if (words[idx].correct === word) {
+      await delay(1000);
       mainButtonsRef.current.children[firstElemId].classList.toggle('main__btn--correct');
       mainButtonsRef.current.children[secondElemId].classList.toggle('main__btn--incorrect');
     } else {
       mainButtonsRef.current.children[firstElemId].classList.toggle('main__btn--incorrect');
       mainButtonsRef.current.children[secondElemId].classList.toggle('main__btn--correct');
+      await delay(1000);
+      mainButtonsRef.current.children[firstElemId].classList.toggle('main__btn--incorrect');
+      mainButtonsRef.current.children[secondElemId].classList.toggle('main__btn--correct');
     }
+
     mainButtonsRef.current.children[firstElemId].children[0].style.opacity = 0;
     mainButtonsRef.current.children[secondElemId].children[0].style.opacity = 0;
 

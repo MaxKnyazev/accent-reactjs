@@ -54,3 +54,49 @@
     .icon:hover {
       color: rgb(197, 197, 197);
     }
+
+@media screen and (max-width: 1400px) {
+  .logo__title {
+    font-size: 4vmax;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .icons {
+    left: 78vw;
+    height: 15vh;
+    max-width: 25vw;
+    margin-right: 0;
+  }
+
+    .icon {
+      width: 3rem;
+      margin-right: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+  .icons {
+    left: 73vw;
+    height: 15vh;
+    max-width: 25vw;
+    margin-right: 0;
+  }
+
+    .icon {
+      width: 80%;
+      margin-right: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+  .logo__title {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .logo__title {
+    font-size: 2.5rem;
+  }
+}

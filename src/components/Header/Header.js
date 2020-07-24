@@ -4,6 +4,7 @@ import VkIcon from '../../svg/VkIcon';
 import ProgressBar from '../ProgressBar/ProogressBar';
 import words from '../../data/data';
 import './Header.css';
+import AccentLogo from '../../svg/AccentLogo';
 
 function Header ({correctCount, incorrectCount}) {
   return (
