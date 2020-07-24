@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/accent-reactjs/static/css/main.c87d259c.chunk.css",
+    "main.js": "/accent-reactjs/static/js/main.f79ec852.chunk.js",
+    "main.js.map": "/accent-reactjs/static/js/main.f79ec852.chunk.js.map",
+    "runtime-main.js": "/accent-reactjs/static/js/runtime-main.4a6d4c03.js",
+    "runtime-main.js.map": "/accent-reactjs/static/js/runtime-main.4a6d4c03.js.map",
+    "static/js/2.d4aef070.chunk.js": "/accent-reactjs/static/js/2.d4aef070.chunk.js",
+    "static/js/2.d4aef070.chunk.js.map": "/accent-reactjs/static/js/2.d4aef070.chunk.js.map",
+    "index.html": "/accent-reactjs/index.html",
+    "precache-manifest.95cf8a1ceddb51a395678825b7adf96d.js": "/accent-reactjs/precache-manifest.95cf8a1ceddb51a395678825b7adf96d.js",
+    "service-worker.js": "/accent-reactjs/service-worker.js",
+    "static/css/main.c87d259c.chunk.css.map": "/accent-reactjs/static/css/main.c87d259c.chunk.css.map",
+    "static/js/2.d4aef070.chunk.js.LICENSE.txt": "/accent-reactjs/static/js/2.d4aef070.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4a6d4c03.js",
+    "static/js/2.d4aef070.chunk.js",
+    "static/css/main.c87d259c.chunk.css",
+    "static/js/main.f79ec852.chunk.js"
+  ]
+}
