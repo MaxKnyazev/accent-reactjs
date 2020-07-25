@@ -55,6 +55,17 @@
       color: rgb(197, 197, 197);
     }
 
+.logo--accent {
+  width: 3.5rem;
+  position: absolute;
+  left: 7vw;
+  top: 3vh;
+}
+
+.icon--accent {
+  fill: var(--grey-color);
+}
+
 @media screen and (max-width: 1400px) {
   .logo__title {
     font-size: 4vmax;
@@ -75,6 +86,12 @@
     }
 }
 
+@media screen and (max-width: 800px) {
+  .logo__title {
+    font-size: 3rem;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .icons {
     left: 73vw;
@@ -87,16 +104,19 @@
       width: 80%;
       margin-right: 0.5rem;
     }
-}
 
-@media screen and (max-width: 800px) {
-  .logo__title {
-    font-size: 3rem;
+  .logo--accent {
+    width: 3rem;
   }
 }
 
 @media screen and (max-width: 500px) {
   .logo__title {
     font-size: 2.5rem;
+  }
+
+  .logo--accent {
+    width: 2rem;
+    top: 4.5vh;
   }
 }

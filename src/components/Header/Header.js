@@ -9,6 +9,9 @@ import AccentLogo from '../../svg/AccentLogo';
 function Header ({correctCount, incorrectCount}) {
   return (
     <header className='header'>
+    <div className='logo--accent'>
+      <AccentLogo />
+    </div>
     <ProgressBar count={correctCount} words={words} classes='progress--correct'/>
 
     <div className='logo'>
