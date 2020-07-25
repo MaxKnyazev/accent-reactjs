@@ -20,6 +20,20 @@ class App extends Component {
   index = 0;
   isAnimated = false;
 
+  randomlySortWords = () => {
+    let randomNumber = Math.random();
+    this.setState({
+      firstWord:
+        randomNumber > 0.5
+          ? words[this.index].correct
+          : words[this.index].incorrect,
+      secondWord:
+        randomNumber > 0.5
+          ? words[this.index].incorrect
+          : words[this.index].correct,
+    });
+  }
+
   buttonStartHandler = () => {
     this.setState({
       correctCount: 0,
@@ -34,83 +48,62 @@ class App extends Component {
     randomSort(words);
     words.map((elem) => (elem.madeError = false));
 
-    let randomNumber = Math.random();
     this.isGameOn = true;
-    this.setState({
-      firstWord:
-        randomNumber > 0.5
-          ? words[this.index].correct
-          : words[this.index].incorrect,
-      secondWord:
-        randomNumber > 0.5
-          ? words[this.index].incorrect
-          : words[this.index].correct,
-    });
+    this.randomlySortWords()
   };
 
+  toggleClassesOnElem = (elem, firstId, secondId, firstClass, secondClass) => {
+    elem.children[firstId].classList.toggle(firstClass);
+    elem.children[secondId].classList.toggle(secondClass);
+  }
+
+  animateButtonChange = async (elem, firstId, secondId, firstClass, secondClass) => {
+    this.toggleClassesOnElem(elem, firstId, secondId, firstClass, secondClass);
+    await delay(1000);
+    this.toggleClassesOnElem(elem, firstId, secondId, firstClass, secondClass);
+  }
+
+  changeOpacityOnElements = (elem, firstId, secondId, opacity) => {
+    elem.children[firstId].children[0].style.opacity = opacity;
+    elem.children[secondId].children[0].style.opacity = opacity;
+  }
+
   animatedChangeWords = async (word, idx, mainButtonsRef, firstElemId, secondElemId) => {
-    let randomNumber = Math.random();
     this.isAnimated = true;
     if (words[idx].correct === word) {
-      mainButtonsRef.current.children[firstElemId].classList.toggle('main__btn--correct');
-      mainButtonsRef.current.children[secondElemId].classList.toggle('main__btn--incorrect');
-      await delay(1000);
-      mainButtonsRef.current.children[firstElemId].classList.toggle('main__btn--correct');
-      mainButtonsRef.current.children[secondElemId].classList.toggle('main__btn--incorrect');
+      await this.animateButtonChange(mainButtonsRef.current, firstElemId, secondElemId, 'main__btn--correct', 'main__btn--incorrect')
     } else {
-      mainButtonsRef.current.children[firstElemId].classList.toggle('main__btn--incorrect');
-      mainButtonsRef.current.children[secondElemId].classList.toggle('main__btn--correct');
-      await delay(1000);
-      mainButtonsRef.current.children[firstElemId].classList.toggle('main__btn--incorrect');
-      mainButtonsRef.current.children[secondElemId].classList.toggle('main__btn--correct');
+      await this.animateButtonChange(mainButtonsRef.current, firstElemId, secondElemId, 'main__btn--incorrect', 'main__btn--correct');
     }
-
-    mainButtonsRef.current.children[firstElemId].children[0].style.opacity = 0;
-    mainButtonsRef.current.children[secondElemId].children[0].style.opacity = 0;
-
+    this.changeOpacityOnElements(mainButtonsRef.current, firstElemId, secondElemId, 0);
     await delay(250);
-
-    this.setState({
-      firstWord:
-        randomNumber > 0.5
-          ? words[this.index].correct
-          : words[this.index].incorrect,
-      secondWord:
-        randomNumber > 0.5
-          ? words[this.index].incorrect
-          : words[this.index].correct,
-    });
-    mainButtonsRef.current.children[firstElemId].children[0].style.opacity = 1;
-    mainButtonsRef.current.children[secondElemId].children[0].style.opacity = 1;
+    this.randomlySortWords();
+    this.changeOpacityOnElements(mainButtonsRef.current, firstElemId, secondElemId, 1);
     this.isAnimated = false;
+  }
+
+  changeInfoCount = async (elem, count, sign = '+') => {
+    elem.style.opacity = 0;
+    await delay(250);
+    elem.style.opacity = 1;
+
+    this.setState((prevState) => sign === '+' ? ({
+      [count]: prevState[count] + 1,
+    }) : ({
+      [count]: prevState[count] - 1,
+    }));
   }
 
   animatedChangeInfo = async (word, idx, mainInfoRef) => {
     if (words[idx].correct === word) {
-      mainInfoRef.current.children[0].children[0].style.opacity = 0;
-      console.dir(mainInfoRef.current);
-      await delay(250);
-      mainInfoRef.current.children[0].children[0].style.opacity = 1;
-      this.setState((prevState) => ({
-        correctCount: prevState.correctCount + 1,
-      }));
+      await this.changeInfoCount(mainInfoRef.current.children[0].children[0], 'correctCount', '+')
     } else {
-      mainInfoRef.current.children[2].children[0].style.opacity = 0;
       words[idx].madeError = true;
-      await delay(250);
-      mainInfoRef.current.children[2].children[0].style.opacity = 1;
-      this.setState((prevState) => ({
-        incorrectCount: prevState.incorrectCount + 1,
-      }));
+      await this.changeInfoCount(mainInfoRef.current.children[2].children[0], 'incorrectCount', '+')
     }
 
     if (!this.checkEnd()) {
-      mainInfoRef.current.children[1].children[0].style.opacity = 0;
-      await delay(250);
-      mainInfoRef.current.children[1].children[0].style.opacity = 1;
-      this.setState((prevState) => ({
-        allCount: prevState.allCount - 1,
-      }));
+      await this.changeInfoCount(mainInfoRef.current.children[1].children[0], 'allCount', '-')
       this.index += 1;
     }
   }
