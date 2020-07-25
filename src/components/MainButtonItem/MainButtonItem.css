@@ -85,11 +85,14 @@
     }
   }
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 460px) {
     .main__btn {
-      width: 30vw;
+      /* width: 30vw;
       height: 30vw;
 
-      text-align: center;
+      text-align: center; */
+
+    width: 100%;
+    font-size: calc(1rem + 3vw);
     }
   }

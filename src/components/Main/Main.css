@@ -28,3 +28,10 @@
       flex-direction: column-reverse;
     }
   }
+
+  @media screen and (max-width: 460px) {
+    .main__content {
+      padding-right: 10vw;
+      padding-left: 10vw;
+    }
+  }
