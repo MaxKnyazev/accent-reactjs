@@ -12,9 +12,6 @@
   border-top: 20px solid rgb(32, 32, 32);
 }
 
-  .main__wrongsList {
-  }
-
   .main__successMessage {
     font-size: calc(10px + 4vmin);
     color: var(--correct-color);
@@ -99,9 +96,17 @@
   }
 }
 
+@media screen and (max-width: 400px) {
+  .main__showWrongs {
+    font-size: 1rem;
+  }
+}
+
 @media screen and (max-width: 350px) {
   .main__showWrongs {
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
+    font-size: 1rem;
+    width: 100vw;
   }
 
   .main__unsuccessMessage {
