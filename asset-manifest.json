@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/accent-reactjs/static/css/main.babef2a8.chunk.css",
-    "main.js": "/accent-reactjs/static/js/main.3a07d14f.chunk.js",
-    "main.js.map": "/accent-reactjs/static/js/main.3a07d14f.chunk.js.map",
+    "main.css": "/accent-reactjs/static/css/main.f491ed87.chunk.css",
+    "main.js": "/accent-reactjs/static/js/main.7f8a42ed.chunk.js",
+    "main.js.map": "/accent-reactjs/static/js/main.7f8a42ed.chunk.js.map",
     "runtime-main.js": "/accent-reactjs/static/js/runtime-main.4a6d4c03.js",
     "runtime-main.js.map": "/accent-reactjs/static/js/runtime-main.4a6d4c03.js.map",
     "static/js/2.b9711aa5.chunk.js": "/accent-reactjs/static/js/2.b9711aa5.chunk.js",
     "static/js/2.b9711aa5.chunk.js.map": "/accent-reactjs/static/js/2.b9711aa5.chunk.js.map",
     "index.html": "/accent-reactjs/index.html",
-    "precache-manifest.250c458c71f7998dd52e615e2258ebda.js": "/accent-reactjs/precache-manifest.250c458c71f7998dd52e615e2258ebda.js",
+    "precache-manifest.321517c836e01277d89514dc0cf08e2b.js": "/accent-reactjs/precache-manifest.321517c836e01277d89514dc0cf08e2b.js",
     "service-worker.js": "/accent-reactjs/service-worker.js",
-    "static/css/main.babef2a8.chunk.css.map": "/accent-reactjs/static/css/main.babef2a8.chunk.css.map",
+    "static/css/main.f491ed87.chunk.css.map": "/accent-reactjs/static/css/main.f491ed87.chunk.css.map",
     "static/js/2.b9711aa5.chunk.js.LICENSE.txt": "/accent-reactjs/static/js/2.b9711aa5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4a6d4c03.js",
     "static/js/2.b9711aa5.chunk.js",
-    "static/css/main.babef2a8.chunk.css",
-    "static/js/main.3a07d14f.chunk.js"
+    "static/css/main.f491ed87.chunk.css",
+    "static/js/main.7f8a42ed.chunk.js"
   ]
 }
