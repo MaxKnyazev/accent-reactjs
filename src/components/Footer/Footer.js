@@ -5,7 +5,7 @@ function Footer () {
   return (
     <footer className='footer'>
       <span className='footer__copyright'>
-        Max Knyazev <br /> Copyright &copy; 2020
+        <span>Max Knyazev</span> <span>Copyright &copy; 2020</span>
       </span>
     </footer>
   )

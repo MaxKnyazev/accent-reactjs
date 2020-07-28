@@ -120,3 +120,40 @@
     top: 4.5vh;
   }
 }
+
+@media (max-height: 800px) {
+  .logo--accent {
+    width: 2.5rem;
+    top: 4vh;
+  }
+}
+
+@media (max-height: 600px) {
+  .logo--accent {
+    width: 2rem;
+    top: 3.5vh;
+  }
+}
+
+@media (max-height: 450px) {
+  .logo--accent {
+    width: 1.5rem;
+    top: 3vh;
+  }
+}
+
+@media (max-height: 400px) {
+  .icon {
+    width: 2rem;
+    margin-right: 0.5rem;
+  }
+
+  .logo__title {
+    font-size: 2rem;
+  }
+
+  .logo--accent {
+    width: 1.4rem;
+    top: 3vh;
+  }
+}

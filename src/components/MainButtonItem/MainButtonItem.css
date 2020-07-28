@@ -96,3 +96,33 @@
     font-size: calc(1rem + 2vw);
     }
   }
+
+  @media (max-height: 600px) and (max-width: 1000px) {
+    .main__btn:first-child {
+      margin-bottom: 0;
+    }
+
+    .main__btn {
+      margin-bottom: 0;
+      width: 13rem;
+      height: 4rem;
+      font-size: 20px;
+    }
+  }
+
+  @media (max-height: 600px) and (max-width: 500px) {
+    .main__btn {
+      width: 10rem;
+      height: 4rem;
+      font-size: 15px;
+    }
+  }
+
+  @media (max-height: 600px) and (max-width: 450px) {
+    .main__btn {
+      width: 6rem;
+      height: 4rem;
+      font-size: 15px;
+    }
+  }
+

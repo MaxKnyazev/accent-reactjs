@@ -75,3 +75,11 @@
     font-size: 2rem;
   }
 }
+
+@media screen and (max-height: 800px) {
+  .main__info {
+    width: 10vw;
+    height: 10vw;
+    font-size: 2rem;
+  }
+}

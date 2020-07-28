@@ -35,3 +35,10 @@
       padding-left: 10vw;
     }
   }
+
+  @media (max-height: 600px) and (max-width: 600px) {
+    .main__content {
+      padding-right: 4vw;
+      padding-left: 4vw;
+    }
+  }

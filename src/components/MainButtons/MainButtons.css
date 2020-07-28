@@ -13,3 +13,10 @@
     flex-direction: column;
    }
 }
+
+@media (max-height: 600px) {
+  .main__buttons {
+    flex-direction: row;
+    justify-content: space-between;
+   }
+}
