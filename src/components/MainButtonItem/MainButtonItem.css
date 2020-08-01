@@ -126,3 +126,25 @@
     }
   }
 
+/* ------------------------------- */
+
+@media (max-height: 600px) and (max-width: 434px) {
+  .main__btn {
+    /* background-color: red;
+    justify-content: center; */
+    width: 80%;
+    height: 5rem;
+    font-size: 20px;
+  }
+  .main__btn:first-child {
+    margin-bottom: 20px;
+  }
+
+}
+
+@media (max-height: 434px) and (max-width: 600px) {
+  .main__btn {
+    /* background-color: blue; */
+  }
+}
+

@@ -83,3 +83,25 @@
     font-size: 2rem;
   }
 }
+
+/* ------------------------------- */
+
+@media (max-height: 600px) and (max-width: 434px) {
+  .main__info {
+    /* background-color: red; */
+    width: 15vh;
+    height: 15vh;
+    font-size: 2rem;
+  }
+
+}
+
+@media (max-height: 434px) and (max-width: 600px) {
+  .main__info {
+    /* background-color: blue; */
+    width: 20vh;
+    height: 20vh;
+    font-size: 2rem;
+
+  }
+}

@@ -88,7 +88,7 @@
 
 @media screen and (max-width: 800px) {
   .logo__title {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -155,5 +155,22 @@
   .logo--accent {
     width: 1.4rem;
     top: 3vh;
+  }
+}
+
+/* ------------------------------- */
+
+@media (max-height: 600px) and (max-width: 434px) {
+  .icon {
+    /* background-color: red; */
+    width: 70%;
+  }
+
+}
+
+@media (max-height: 434px) and (max-width: 600px) {
+  .icon {
+    /* background-color: blue; */
+    width: 50%;
   }
 }
