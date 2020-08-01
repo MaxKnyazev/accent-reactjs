@@ -21,7 +21,7 @@
    }
 }
 
-/* ------------------------------- */
+/* ------------------------------- 600 x 434     */
 
 @media (max-height: 600px) and (max-width: 434px) {
   .main__buttons {
@@ -32,6 +32,21 @@
 }
 
 @media (max-height: 434px) and (max-width: 600px) {
+  .main__buttons {
+    /* background-color: blue; */
+  }
+}
+
+/* ------------------------------- 800 x 435     */
+
+@media (max-height: 800px) and (max-width: 435px) {
+  .main__buttons {
+    /* background-color: red; */
+  }
+
+}
+
+@media (max-height: 435px) and (max-width: 800px) {
   .main__buttons {
     /* background-color: blue; */
   }
