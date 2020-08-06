@@ -87,13 +87,8 @@
 
   @media screen and (max-width: 460px) {
     .main__btn {
-      /* width: 30vw;
-      height: 30vw;
-
-      text-align: center; */
-
-    width: 100%;
-    font-size: calc(1rem + 2vw);
+      width: 100%;
+      font-size: calc(1rem + 2vw);
     }
   }
 

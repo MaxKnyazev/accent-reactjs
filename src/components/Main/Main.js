@@ -20,21 +20,33 @@ function Main ({isGameOn, buttonStartHandler, wordButtonHandler, firstWord, seco
             index={index}
             mainInfoRef={mainInfoRef}
           />
-
-          <MainInfo mainInfoRef={mainInfoRef} correctCount={correctCount} allCount={allCount} incorrectCount={incorrectCount}/>
+          <MainInfo 
+            mainInfoRef={mainInfoRef} 
+            correctCount={correctCount} 
+            allCount={allCount} 
+            incorrectCount={incorrectCount}
+          />
         </section>
       </main>
     ) : isFinished ? (
       <main className='main'>
         <section className='main__content'>
           <WrongsResult words={words} />
-          <MainButtonItem buttonHandler={buttonStartHandler} word='Начать заново' classes='main__btn main__btn--start'/>
+          <MainButtonItem 
+            buttonHandler={buttonStartHandler} 
+            word='Начать заново' 
+            classes='main__btn main__btn--start'
+          />
         </section>
       </main>
     ) : (
       <main className='main'>
         <section className='main__content'>
-          <MainButtonItem buttonHandler={buttonStartHandler} word='Начать' classes='main__btn main__btn--start'/>
+          <MainButtonItem 
+            buttonHandler={buttonStartHandler} 
+            word='Начать' 
+            classes='main__btn main__btn--start'
+          />
         </section>
       </main>
     )
