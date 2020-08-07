@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b964e23bfa3e40199e2880ec90e79e93",
+    "revision": "74b33ed1df3b733d25617e15f26861de",
     "url": "/accent-reactjs/index.html"
   },
   {
-    "revision": "1ab5a5c03fe1b1d465c5",
+    "revision": "675013143c55297ff7ad",
     "url": "/accent-reactjs/static/css/main.efadd84f.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/accent-reactjs/static/js/2.b9711aa5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1ab5a5c03fe1b1d465c5",
-    "url": "/accent-reactjs/static/js/main.1bdb097d.chunk.js"
+    "revision": "675013143c55297ff7ad",
+    "url": "/accent-reactjs/static/js/main.eeba5e94.chunk.js"
   },
   {
     "revision": "18769881859a80f88c75",
