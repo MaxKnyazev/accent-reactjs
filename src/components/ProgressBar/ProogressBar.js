@@ -1,7 +1,8 @@
 import React from 'react';
 import './ProgressBar.css';
+import words from '../../data/data';
 
-function ProgressBar ({count, words, classes}) {
+function ProgressBar ({count, classes}) {
   return (
     <div
       style={{

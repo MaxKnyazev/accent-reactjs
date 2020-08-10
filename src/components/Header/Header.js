@@ -2,7 +2,6 @@ import React from 'react';
 import GithubIcon from '../../svg/GithubIcon';
 import VkIcon from '../../svg/VkIcon';
 import ProgressBar from '../ProgressBar/ProogressBar';
-import words from '../../data/data';
 import './Header.css';
 import AccentLogo from '../../svg/AccentLogo';
 
@@ -12,13 +11,13 @@ function Header ({correctCount, incorrectCount}) {
     <div className='logo--accent'>
       <AccentLogo />
     </div>
-    <ProgressBar count={correctCount} words={words} classes='progress--correct'/>
+    <ProgressBar count={correctCount} classes='progress--correct'/>
 
     <div className='logo'>
       <h1 className='logo__title'>Accent</h1>
     </div>
 
-    <ProgressBar count={incorrectCount} words={words} classes='progress--incorrect'/>
+    <ProgressBar count={incorrectCount} classes='progress--incorrect'/>
     <div className='icons'>
       <GithubIcon />
       <VkIcon />
