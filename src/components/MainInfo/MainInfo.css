@@ -1,50 +1,43 @@
 .main__levels {
-  /* height: 10vh; */
   width: 100%;
-
   display: flex;
   justify-content: space-between;
-
-  /* background-color: red; */
 }
 
-  .main__info {
-    width: 15vmin;
-    height: 15vmin;
-    background-color: rgb(32, 32, 32);
-    border-radius: 50%;
+.main__info {
+  width: 15vmin;
+  height: 15vmin;
+  background-color: rgb(32, 32, 32);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5vmin;
+  font-weight: lighter;
+  color: #fff;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.main__info--correct {
+  border: 3px solid var(--correct-color);
+  color: var(--correct-color);
+}
 
-    font-size: 5vmin;
-    font-weight: lighter;
-    color: #fff;
+.main__info--all {
+  border: 3px solid rgb(161, 161, 161);
+  color: rgb(236, 236, 236);
+}
 
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    user-select: none;   
-  }
+.main__info--incorrect {
+  border: 3px solid var(--incorrect-color);
+  color: var(--incorrect-color);
+}
 
-    .main__info--correct {
-      border: 3px solid var(--correct-color);
-      color: var(--correct-color);
-    }
-
-    .main__info--all {
-      border: 3px solid rgb(161, 161, 161);
-      color: rgb(236, 236, 236);
-    }
-
-    .main__info--incorrect {
-      border: 3px solid var(--incorrect-color);
-      color: var(--incorrect-color);
-    }
-
-    .main__infoInside {
-      transition: opacity 250ms ease-in;
-    }
+.main__infoInside {
+  transition: opacity 250ms ease-in;
+}
 
 @media screen and (max-width: 1000px) {
   .main__levels {
@@ -84,11 +77,8 @@
   }
 }
 
-/* ------------------------------- */
-
 @media (max-height: 600px) and (max-width: 434px) {
   .main__info {
-    /* background-color: red; */
     width: 15vh;
     height: 15vh;
     font-size: 2rem;
@@ -97,29 +87,16 @@
 
 @media (max-height: 434px) and (max-width: 600px) {
   .main__info {
-    /* background-color: blue; */
     width: 20vh;
     height: 20vh;
     font-size: 2rem;
-
   }
 }
 
-/* ------------------------------- 800 x 435     */
 @media (max-height: 800px) and (max-width: 435px) {
   .main__info {
-    /* background-color: red; */
     width: 20vw;
     height: 20vw;
     font-size: 2rem;
-
   }
 }
-
-@media (max-height: 435px) and (max-width: 800px) {
-  .main__info {
-    /* background-color: blue; */
-  }
-}
-
-

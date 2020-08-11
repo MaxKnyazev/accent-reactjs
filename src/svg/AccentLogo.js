@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default () => (
-  <a href='#'>
+  <a href='https://maxknyazev.github.io/accent-reactjs/'>
     <svg
       className='icon--accent'
       xmlns='http://www.w3.org/2000/svg'

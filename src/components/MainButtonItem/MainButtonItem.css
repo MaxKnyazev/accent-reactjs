@@ -2,129 +2,120 @@
   width: 35vmin;
   height: 15vmin;
   min-width: 200px;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   background-color: rgb(32, 32, 32);
   color: var(--grey-color);
   font-size: calc(10px + 2vmin);
   font-weight: lighter;
   border-bottom: 0 solid black;
-
-  /* position: absolute; */
-
   cursor: pointer;
-  transition: all 200ms ease-in,
-              background-color 500ms ease-in,
-              opacity 250ms ease-in;
+  transition: all 200ms ease-in, background-color 500ms ease-in, opacity 250ms ease-in;
 }
-  .main__btn:hover {
-    border-bottom: 10px solid rgb(107, 107, 107);
-    background-color: rgb(44, 44, 44);
-    color: var(--grey-color);
-  }
+.main__btn:hover {
+  border-bottom: 10px solid rgb(107, 107, 107);
+  background-color: rgb(44, 44, 44);
+  color: var(--grey-color);
+}
 
-  .main__btn--start {
-    font-size: calc(10px + 3vmin);
-    width: 35vmin;
-  }
+.main__btn--start {
+  font-size: calc(10px + 3vmin);
+  width: 35vmin;
+}
 
 .main__btn--correct {
   background-color: rgb(2, 56, 0);
   color: var(--correct-color);
   border-bottom: 10px solid var(--correct-color);
 }
-  .main__btn--correct:hover {
-    background-color: rgb(2, 56, 0);
-    color: var(--correct-color);
-    border-bottom: 10px solid var(--correct-color);
-  }
+.main__btn--correct:hover {
+  background-color: rgb(2, 56, 0);
+  color: var(--correct-color);
+  border-bottom: 10px solid var(--correct-color);
+}
 
 .main__btn--incorrect {
   background-color: rgb(56, 0, 0);
   color: var(--incorrect-color);
   border-bottom: 10px solid var(--incorrect-color);
 }
-  .main__btn--incorrect:hover {
-    background-color: rgb(56, 0, 0);
-    color: var(--incorrect-color);
-    border-bottom: 10px solid var(--incorrect-color);
+.main__btn--incorrect:hover {
+  background-color: rgb(56, 0, 0);
+  color: var(--incorrect-color);
+  border-bottom: 10px solid var(--incorrect-color);
+}
+
+.main__btnInside {
+  transition: opacity 250ms ease-in;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+
+@media screen and (min-width: 1600px) {
+  .main__btn {
+    width: 40vmin;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .main__btn:first-child {
+    margin-bottom: 2vh;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .main__btn {
+    width: 20rem;
+    height: 9rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main__btn {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .main__btn {
+    width: 100%;
+    font-size: calc(1rem + 2vw);
+  }
+}
+
+@media (max-height: 600px) and (max-width: 1000px) {
+  .main__btn:first-child {
+    margin-bottom: 0;
   }
 
-  .main__btnInside {
-    transition: opacity 250ms ease-in;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    user-select: none;   
+  .main__btn {
+    margin-bottom: 0;
+    width: 13rem;
+    height: 4rem;
+    font-size: 20px;
   }
+}
 
-  @media screen and (min-width: 1600px) {
-    .main__btn { 
-      width: 40vmin; 
-    }
+@media (max-height: 600px) and (max-width: 500px) {
+  .main__btn {
+    width: 10rem;
+    height: 4rem;
+    font-size: 15px;
   }
+}
 
-  @media screen and (max-width: 1400px) {
-    .main__btn:first-child {
-      margin-bottom: 2vh;
-    }
+@media (max-height: 600px) and (max-width: 450px) {
+  .main__btn {
+    width: 6rem;
+    height: 4rem;
+    font-size: 15px;
   }
+}
 
-  @media screen and (max-width: 1000px) {
-    .main__btn {
-      width: 20rem;
-      height: 9rem;
-    }
-  }
-
-  @media screen and (max-width: 800px) {
-    .main__btn {
-      font-size: 1.7rem;
-    }
-  }
-
-  @media screen and (max-width: 460px) {
-    .main__btn {
-      width: 100%;
-      font-size: calc(1rem + 2vw);
-    }
-  }
-
-  @media (max-height: 600px) and (max-width: 1000px) {
-    .main__btn:first-child {
-      margin-bottom: 0;
-    }
-
-    .main__btn {
-      margin-bottom: 0;
-      width: 13rem;
-      height: 4rem;
-      font-size: 20px;
-    }
-  }
-
-  @media (max-height: 600px) and (max-width: 500px) {
-    .main__btn {
-      width: 10rem;
-      height: 4rem;
-      font-size: 15px;
-    }
-  }
-
-  @media (max-height: 600px) and (max-width: 450px) {
-    .main__btn {
-      width: 6rem;
-      height: 4rem;
-      font-size: 15px;
-    }
-  }
-
-/* ------------------------------- 600 x 434     */
 @media (max-height: 600px) and (max-width: 434px) {
   .main__btn {
-    /* background-color: red; */
     width: 80%;
     height: 5rem;
     font-size: 20px;
@@ -132,27 +123,16 @@
   .main__btn:first-child {
     margin-bottom: 20px;
   }
-
 }
 
-@media (max-height: 434px) and (max-width: 600px) {
-  .main__btn {
-    /* background-color: blue; */
-  }
-}
-
-/* ------------------------------- 800 x 435     */
 @media (max-height: 800px) and (max-width: 435px) {
   .main__btn {
-    /* background-color: red; */
     height: 6rem;
   }
 }
 
 @media (max-height: 435px) and (max-width: 800px) {
   .main__btn {
-    /* background-color: blue; */
     height: 6rem;
   }
 }
-

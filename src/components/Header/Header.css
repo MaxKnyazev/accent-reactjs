@@ -1,15 +1,12 @@
 .header {
   height: 15vh;
   width: 100vw;
-
   background-color: rgb(24, 24, 24);
   color: white;
-
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-
   position: relative;
 }
 
@@ -158,19 +155,14 @@
   }
 }
 
-/* ------------------------------- */
-
 @media (max-height: 600px) and (max-width: 434px) {
   .icon {
-    /* background-color: red; */
     width: 70%;
   }
-
 }
 
 @media (max-height: 434px) and (max-width: 600px) {
   .icon {
-    /* background-color: blue; */
     width: 50%;
   }
 }

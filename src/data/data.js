@@ -19,6 +19,7 @@
     { madeError: false, id: 17, correct: 'нажИвший', incorrect: 'нАживший'},
     { madeError: false, id: 18, correct: 'нАжитый', incorrect: 'нажИтый'}, 
     { madeError: false, id: 19, correct: 'апострОф', incorrect: 'апОстроф'}, 
+
     // { madeError: false, id: 20, correct: 'дОверху', incorrect: 'довЕрху'}, 
     // { madeError: false, id: 21, correct: 'начАв', incorrect: 'нАчав'},
     // { madeError: false, id: 22, correct: 'дозвонЯтся', incorrect: 'дозвОнятся'}, 

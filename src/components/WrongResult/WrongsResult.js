@@ -15,7 +15,9 @@ function WrongsResult({ words }) {
   return wrongWords.length ? (
     <div className='main__showWrongs'>
       <ul className='main__wrongsList'>
-        <li className='main__wrongsItem'><h2 className='main__unsuccessMessage'>Ваши ошибки:</h2></li>
+        <li className='main__wrongsItem'>
+          <h2 className='main__unsuccessMessage'>Ваши ошибки:</h2>
+        </li>
         {wrongWords}
       </ul>
     </div>

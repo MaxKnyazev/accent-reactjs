@@ -32,7 +32,7 @@ class App extends Component {
           ? words[this.index].incorrect
           : words[this.index].correct,
     });
-  }
+  };
 
   buttonStartHandler = () => {
     this.setState({
@@ -49,69 +49,119 @@ class App extends Component {
     words.map((elem) => (elem.madeError = false));
 
     this.isGameOn = true;
-    this.randomlySortWords()
+    this.randomlySortWords();
   };
 
   toggleClassesOnElem = (elem, firstId, secondId, firstClass, secondClass) => {
     elem.children[firstId].classList.toggle(firstClass);
     elem.children[secondId].classList.toggle(secondClass);
-  }
+  };
 
-  animateButtonChange = async (elem, firstId, secondId, firstClass, secondClass) => {
+  animateButtonChange = async (
+    elem,
+    firstId,
+    secondId,
+    firstClass,
+    secondClass
+  ) => {
     this.toggleClassesOnElem(elem, firstId, secondId, firstClass, secondClass);
     await delay(1000);
     this.toggleClassesOnElem(elem, firstId, secondId, firstClass, secondClass);
-  }
+  };
 
   changeOpacityOnElements = (elem, firstId, secondId, opacity) => {
     elem.children[firstId].children[0].style.opacity = opacity;
     elem.children[secondId].children[0].style.opacity = opacity;
-  }
+  };
 
-  animatedChangeWords = async (word, idx, mainButtonsRef, firstElemId, secondElemId) => {
+  animatedChangeWords = async (
+    word,
+    idx,
+    mainButtonsRef,
+    firstElemId,
+    secondElemId
+  ) => {
     this.isAnimated = true;
     if (words[idx].correct === word) {
-      await this.animateButtonChange(mainButtonsRef.current, firstElemId, secondElemId, 'main__btn--correct', 'main__btn--incorrect')
+      await this.animateButtonChange(
+        mainButtonsRef.current,
+        firstElemId,
+        secondElemId,
+        'main__btn--correct',
+        'main__btn--incorrect'
+      );
     } else {
-      await this.animateButtonChange(mainButtonsRef.current, firstElemId, secondElemId, 'main__btn--incorrect', 'main__btn--correct');
+      await this.animateButtonChange(
+        mainButtonsRef.current,
+        firstElemId,
+        secondElemId,
+        'main__btn--incorrect',
+        'main__btn--correct'
+      );
     }
-    this.changeOpacityOnElements(mainButtonsRef.current, firstElemId, secondElemId, 0);
+    this.changeOpacityOnElements(
+      mainButtonsRef.current,
+      firstElemId,
+      secondElemId,
+      0
+    );
     await delay(250);
     this.randomlySortWords();
-    this.changeOpacityOnElements(mainButtonsRef.current, firstElemId, secondElemId, 1);
+    this.changeOpacityOnElements(
+      mainButtonsRef.current,
+      firstElemId,
+      secondElemId,
+      1
+    );
     this.isAnimated = false;
-  }
+  };
 
   changeInfoCount = async (elem, count, sign = '+') => {
     elem.style.opacity = 0;
     await delay(250);
     elem.style.opacity = 1;
 
-    this.setState((prevState) => sign === '+' ? ({
-      [count]: prevState[count] + 1,
-    }) : ({
-      [count]: prevState[count] - 1,
-    }));
-  }
+    this.setState((prevState) =>
+      sign === '+'
+        ? {
+            [count]: prevState[count] + 1,
+          }
+        : {
+            [count]: prevState[count] - 1,
+          }
+    );
+  };
 
   animatedChangeInfo = async (word, idx, mainInfoRef) => {
     if (words[idx].correct === word) {
-      await this.changeInfoCount(mainInfoRef.current.children[0].children[0], 'correctCount', '+')
+      await this.changeInfoCount(
+        mainInfoRef.current.children[0].children[0],
+        'correctCount',
+        '+'
+      );
     } else {
       words[idx].madeError = true;
-      await this.changeInfoCount(mainInfoRef.current.children[2].children[0], 'incorrectCount', '+')
+      await this.changeInfoCount(
+        mainInfoRef.current.children[2].children[0],
+        'incorrectCount',
+        '+'
+      );
     }
 
     if (!this.checkEnd()) {
-      await this.changeInfoCount(mainInfoRef.current.children[1].children[0], 'allCount', '-')
+      await this.changeInfoCount(
+        mainInfoRef.current.children[1].children[0],
+        'allCount',
+        '-'
+      );
       this.index += 1;
     }
-  }
+  };
 
   wordButtonHandler = (word, idx, mainButtonsRef, mainInfoRef, wordFlag) => {
     if (!this.isAnimated) {
       this.animatedChangeInfo(word, idx, mainInfoRef);
-  
+
       if (!this.checkEnd()) {
         if (wordFlag === 'first') {
           this.animatedChangeWords(word, idx, mainButtonsRef, 0, 1);
@@ -120,7 +170,6 @@ class App extends Component {
         if (wordFlag === 'second') {
           this.animatedChangeWords(word, idx, mainButtonsRef, 1, 0);
         }
-
       } else {
         this.isGameOn = false;
         this.isFinished = true;
@@ -133,13 +182,13 @@ class App extends Component {
   render() {
     return (
       <>
-        <Header 
-          correctCount={this.state.correctCount} 
-          incorrectCount={this.state.incorrectCount} 
+        <Header
+          correctCount={this.state.correctCount}
+          incorrectCount={this.state.incorrectCount}
         />
 
-        <Main 
-          isGameOn={this.isGameOn} 
+        <Main
+          isGameOn={this.isGameOn}
           wordButtonHandler={this.wordButtonHandler}
           index={this.index}
           {...this.state}

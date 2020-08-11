@@ -2,16 +2,15 @@
   margin: 1px;
   height: 2px;
   border-radius: 3px;
-
   transition: width 500ms ease-in;
 }
 
-  .progress--correct {
-    background-color: var(--correct-color);
-    width: 0;
-  }
+.progress--correct {
+  background-color: var(--correct-color);
+  width: 0;
+}
 
-  .progress--incorrect {
-    background-color: var(--incorrect-color);
-    width: 0;
-  }
+.progress--incorrect {
+  background-color: var(--incorrect-color);
+  width: 0;
+}
