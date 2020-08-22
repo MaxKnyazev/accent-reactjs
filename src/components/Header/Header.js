@@ -11,11 +11,19 @@ function Header({ correctCount, incorrectCount, init, words }) {
       <div className='logo--accent' onClick={init}>
         <AccentLogo />
       </div>
-      <ProgressBar count={correctCount} classes='progress--correct' words={words}/>
+      <ProgressBar
+        count={correctCount}
+        classes='progress--correct'
+        words={words}
+      />
       <div className='logo'>
         <h1 className='logo__title'>Accent</h1>
       </div>
-      <ProgressBar count={incorrectCount} classes='progress--incorrect' words={words}/>
+      <ProgressBar
+        count={incorrectCount}
+        classes='progress--incorrect'
+        words={words}
+      />
       <div className='icons'>
         <GithubIcon />
         <VkIcon />
