@@ -19,6 +19,21 @@
     justify-content: space-around;
   }
 
+  /* .main__change-count {
+    font-size: calc(10px + 7vmin);
+    color: rgb(32, 32, 32);
+    display: flex;
+  }
+  .main__change-count span{
+    margin: 10px;
+    width: 15vmin;
+    height: 15vmin;
+    display: flex;
+    border: 1px solid red;
+    justify-content: center;
+    align-items: center;
+  } */
+
   @media screen and (max-width: 1000px) {
     .main__content {
       width: 100vw;

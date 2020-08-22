@@ -57,9 +57,17 @@ function Main({
           word='Начать'
           classes='main__btn main__btn--start'
         />
+
+
       </section>
     </main>
   );
 }
 
 export default Main;
+
+// <span className='main__change-count'>
+// <span className='main__add'>-</span>
+// <span className='main__count'>100</span>
+// <span className='main__sub'>+</span>
+// </span>
