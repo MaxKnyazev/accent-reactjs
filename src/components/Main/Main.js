@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
 import WrongsResult from '../WrongResult/WrongsResult';
-import words from '../../data/data';
 import MainInfo from '../MainInfo/MainInfo';
 import MainButtons from '../MainButtons/MainButtons';
 import MainButtonItem from '../MainButtonItem/MainButtonItem';
+import ChoiceCountOfWords from '../ChoiceCountOfWords/ChoiceCountOfWords';
 import './Main.css';
 
 function Main({
@@ -17,6 +17,10 @@ function Main({
   correctCount,
   allCount,
   incorrectCount,
+  countOfWords,
+  addCount,
+  subCount,
+  words,
 }) {
   let mainInfoRef = useRef();
 
@@ -57,8 +61,11 @@ function Main({
           word='Начать'
           classes='main__btn main__btn--start'
         />
-
-
+        <ChoiceCountOfWords 
+          subCount={subCount}
+          countOfWords={countOfWords}
+          addCount={addCount}
+        />
       </section>
     </main>
   );
@@ -67,7 +74,7 @@ function Main({
 export default Main;
 
 // <span className='main__change-count'>
-// <span className='main__add'>-</span>
-// <span className='main__count'>100</span>
-// <span className='main__sub'>+</span>
+// <span className='main__sub' onClick={subCount}>-</span>
+// <span className='main__count'>{countOfWords}</span>
+// <span className='main__add' onClick={addCount}>+</span>
 // </span>

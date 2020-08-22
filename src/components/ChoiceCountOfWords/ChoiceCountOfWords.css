@@ -1,0 +1,22 @@
+.main__change-count {
+  font-size: calc(10px + 7vmin);
+  color: rgb(32, 32, 32);
+  display: flex;
+  user-select: none;
+}
+.main__change-count span{
+  margin: 10px;
+  width: 15vmin;
+  height: 15vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main__add, .main__sub {
+  border: 1px solid rgb(32, 32, 32);
+  cursor: pointer;
+  transition: background-color 200ms linear;
+}
+.main__add:hover, .main__sub:hover {
+  background-color: #dadada;
+}

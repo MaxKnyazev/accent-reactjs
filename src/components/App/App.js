@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import words from '../../data/data';
+import allWords from '../../data/data';
 import { randomSort, delay } from '../../data/utils';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
@@ -10,43 +10,65 @@ class App extends Component {
   state = {
     correctCount: 0,
     incorrectCount: 0,
-    allCount: words.length,
+    allCount: 0,
     firstWord: '',
     secondWord: '',
+    countOfWords: 10,
   };
 
   isGameOn = false;
   isFinished = false;
   index = 0;
   isAnimated = false;
+  words = [];
+
+  init = () => {
+    this.setState({
+      correctCount: 0,
+      incorrectCount: 0,
+      allCount: 0,
+      firstWord: '',
+      secondWord: '',
+      countOfWords: 10,
+    });
+    this.isGameOn = false;
+    this.isFinished = false;
+    this.index = 0;
+    this.isAnimated = false;
+    this.words = [];
+  }
 
   randomlySortWords = () => {
     let randomNumber = Math.random();
     this.setState({
       firstWord:
         randomNumber > 0.5
-          ? words[this.index].correct
-          : words[this.index].incorrect,
+          ? this.words[this.index].correct
+          : this.words[this.index].incorrect,
       secondWord:
         randomNumber > 0.5
-          ? words[this.index].incorrect
-          : words[this.index].correct,
+          ? this.words[this.index].incorrect
+          : this.words[this.index].correct,
     });
   };
 
   buttonStartHandler = () => {
+    console.log(this.state.countOfWords);
+    this.words = allWords.slice(0, this.state.countOfWords);
+    console.log(this.words);
+
     this.setState({
       correctCount: 0,
       incorrectCount: 0,
-      allCount: words.length,
+      allCount: this.words.length,
       firstWord: '',
       secondWord: '',
     });
 
     this.index = 0;
 
-    randomSort(words);
-    words.map((elem) => (elem.madeError = false));
+    randomSort(this.words);
+    this.words.map((elem) => (elem.madeError = false));
 
     this.isGameOn = true;
     this.randomlySortWords();
@@ -82,7 +104,7 @@ class App extends Component {
     secondElemId
   ) => {
     this.isAnimated = true;
-    if (words[idx].correct === word) {
+    if (this.words[idx].correct === word) {
       await this.animateButtonChange(
         mainButtonsRef.current,
         firstElemId,
@@ -133,14 +155,14 @@ class App extends Component {
   };
 
   animatedChangeInfo = async (word, idx, mainInfoRef) => {
-    if (words[idx].correct === word) {
+    if (this.words[idx].correct === word) {
       await this.changeInfoCount(
         mainInfoRef.current.children[0].children[0],
         'correctCount',
         '+'
       );
     } else {
-      words[idx].madeError = true;
+      this.words[idx].madeError = true;
       await this.changeInfoCount(
         mainInfoRef.current.children[2].children[0],
         'incorrectCount',
@@ -179,12 +201,30 @@ class App extends Component {
 
   checkEnd = () => this.state.allCount === 1;
 
+  addCount = () => {
+    this.setState(prevState => {
+      if (prevState.countOfWords < 100) {
+        return { countOfWords: prevState.countOfWords + 5 }
+      }
+    });
+  }
+
+  subCount = () => {
+    this.setState(prevState => {
+      if (prevState.countOfWords > 5) {
+        return { countOfWords: prevState.countOfWords - 5 }
+      }
+    });
+  }
+
   render() {
     return (
       <>
         <Header
           correctCount={this.state.correctCount}
           incorrectCount={this.state.incorrectCount}
+          init={this.init}
+          words={this.words}
         />
 
         <Main
@@ -194,6 +234,9 @@ class App extends Component {
           {...this.state}
           isFinished={this.isFinished}
           buttonStartHandler={this.buttonStartHandler}
+          addCount={this.addCount}
+          subCount={this.subCount}
+          words={this.words}
         />
 
         <Footer />
@@ -203,3 +246,7 @@ class App extends Component {
 }
 
 export default App;
+
+/**
+ * change-the-count-of-words
+ */
