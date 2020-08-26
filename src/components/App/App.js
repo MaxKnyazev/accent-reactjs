@@ -5,6 +5,7 @@ import { randomSort, delay } from '../../data/utils';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
+import { ANIMATION_TIME } from '../../data/const';
 
 class App extends Component {
   state = {
@@ -87,7 +88,7 @@ class App extends Component {
     secondClass
   ) => {
     this.toggleClassesOnElem(elem, firstId, secondId, firstClass, secondClass);
-    await delay(1000);
+    await delay(ANIMATION_TIME * 4);
     this.toggleClassesOnElem(elem, firstId, secondId, firstClass, secondClass);
   };
 
@@ -127,7 +128,7 @@ class App extends Component {
       secondElemId,
       0
     );
-    await delay(250);
+    await delay(ANIMATION_TIME);
     this.randomlySortWords();
     this.changeOpacityOnElements(
       mainButtonsRef.current,
@@ -140,7 +141,7 @@ class App extends Component {
 
   changeInfoCount = async (elem, count, sign = '+') => {
     elem.style.opacity = 0;
-    await delay(250);
+    await delay(ANIMATION_TIME);
     elem.style.opacity = 1;
 
     this.setState((prevState) =>
