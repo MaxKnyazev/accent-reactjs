@@ -1,16 +1,17 @@
 import React from 'react';
 import './ProgressBar.css';
-// import words from '../../data/data';
 
-function ProgressBar ({count, classes, words}) {
+function ProgressBar({ count, classes, words }) {
+  const result = count ? `${count * (100 / words.length)}vw` : `0vw`;
+
   return (
     <div
       style={{
-        width: `${count * (100 / words.length)}vw`,
+        width: result,
       }}
-      className={`progress ${classes}`} 
+      className={`progress ${classes}`}
     ></div>
-  )
+  );
 }
 
 export default ProgressBar;

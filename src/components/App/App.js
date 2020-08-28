@@ -54,9 +54,9 @@ class App extends Component {
   };
 
   buttonStartHandler = () => {
-    console.log(this.state.countOfWords);
+    // console.log(this.state.countOfWords);
     this.words = allWords.slice(0, this.state.countOfWords);
-    console.log(this.words);
+    // console.log(this.words);
 
     this.setState({
       correctCount: 0,
@@ -70,7 +70,6 @@ class App extends Component {
 
     randomSort(this.words);
     this.words.map((elem) => (elem.madeError = false));
-
     this.isGameOn = true;
     this.randomlySortWords();
   };

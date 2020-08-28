@@ -72,9 +72,3 @@ function Main({
 }
 
 export default Main;
-
-// <span className='main__change-count'>
-// <span className='main__sub' onClick={subCount}>-</span>
-// <span className='main__count'>{countOfWords}</span>
-// <span className='main__add' onClick={addCount}>+</span>
-// </span>
